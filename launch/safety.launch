@@ -1,0 +1,7 @@
+<launch>
+    <arg name='safety_param_file_path' default='$(find success_baxter_safety)/default_params.yaml'/>
+
+    <node name="baxter_safety" ns='baxter_safety' pkg="success_baxter_safety" type="safety.py" output="screen">
+        <param name='safety_param_file_path' value="$(arg safety_param_file_path)" type="string"/>
+    </node>
+</launch>
